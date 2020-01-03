@@ -3,10 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style>
+body {
+	background-color: pink;
+}
+</style>
 </head>
 <body>
+<content class="container text-center" class="table col-md-12">
   <h1>포트폴리오 등록</h1>
   <form method="post"  enctype="multipart/form-data" action="portfolio_register.do">
+	<div class="container text-center">
 	<table border="1">
 		<tr>
 			<td>제목</td>
@@ -52,9 +59,14 @@
 			<td colspan="2"  align="center">
 				<input type="submit" name="등록">
 				<input type="reset" name="취소">
+				<button>
+					<a href="portfolio_list.do">닫기</a>
+				</button>
 			</td>
 		</tr>
  	</table>
-  </form>	
+	</div>
+  </form>
+</content>	
 </body>
 </html>

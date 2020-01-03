@@ -31,7 +31,7 @@ body {
 <div class=loginTitle>Login
 </div>
 <hr class=line>
-</div>
+<div>
         <div style="padding-top:20px;">
 	<label>ID</label><input class="form-control"></input>
 </div>

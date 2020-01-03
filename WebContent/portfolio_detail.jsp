@@ -5,11 +5,38 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>${portfolio.no}.${portfolio.title}</title>
+<!-- 합쳐지고 최소화된 최신 CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+<!-- 부가적인 테마 -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+
+<style>
+body {
+	background-color: pink;
+	font-colr:#000000;
+}
+.mainTitle {
+	font: 100px arial;
+	font-weight: 54%;
+	text-align: center;
+	letter-spacing: 20px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.center {
+	display: block;
+	  margin: auto;
+</style>
 </head>
-<body>
-	<h1>포트폴리오 상세보기</h1>
-	<table border="1">
+<body align="center">
+	<h1>PORTFOLIO</h1>
+		<table border="1" align="center"  class="table">
 		<tr>
 			<td>제목</td>
 			<td>${portfolio.title}</td>
@@ -38,6 +65,12 @@
  	<c:forEach items="${portfolio.dataList}" var="file">
  		<img src="uploadFileSave/${file.realFileName}" width="200px" height="200px"/>
 		<br/>
-	</c:forEach>		
+	</c:forEach>
+		<img-button>
+			<a href="portfolio_list.do">
+				<img src="./download/xx.png">
+			</a>
+		</button>
+
 </body>
 </html>

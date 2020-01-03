@@ -5,6 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style>
+body {
+	background-color: pink;
+}
+</style>
 </head>
 <body>
 	<h2>처리중 문제발생</h2>

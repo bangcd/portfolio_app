@@ -4,8 +4,17 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>채담포트폴리오</title>
+<title>채담이의포트폴리오</title>
 <script type="text/javascript" src="./jquery/jquery-3.4.1.min.js"></script>
+<!-- 합쳐지고 최소화된 최신 CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+<!-- 부가적인 테마 -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
 <style>
 
 body {
@@ -13,8 +22,8 @@ body {
 }
 
 .center {
-	display: block;
 	  margin: auto;
+	    flex: 3;
 
 }
 
@@ -33,100 +42,64 @@ li {
 }
 
 .mainLoginTitle {
+	flex: 3;
 	font: 20px arial;
 	color: #f0f0f0;
 	float: right;
-	letter-spacing: 5px;
+	letter-spacing: 7px;
 }
 
 #portfolio {
 	display: none;
-	float: right;
+  text-align: right;
+	/* float: right; */
 }
 
-#myInformation {
-	display: none;
-	float: left;
+#container {
+  display: flex;
 }
 
 </style>
 
-<div class=mainLoginTitle>Login</div>
-
 </head>
 <body>
-
-	<div class="mainTitle">. PORT</div>
-	<img src="./download/Tulips.jpg" width="400px" height="600px" align="middle" class="center">
+		<div class="mainTitle">PORT</div>
+		<div class="container text-center">
+			<img src="./download/Tulips.jpg" width="400px" height="600px" align="middle" class="center" id='box-center'>
+				<img-button onclick="checkStatus()" >
+				<img src="./download/triangle.png">
+				</button>
+				<ul id="portfolio">
+				
+				<p><a href="portfolio_list.do">게시판</a></p>
+				<a href="/login">로그인</a>
+		</div>
+		</td>
+	</tr>
+	<tr>	
 	<div class="mainTitle">FOLIO</div>
-
-	<script>
+	</tr>
+			<script>
 		//JQUERY script
-		var visibility1 = false;//지금 메뉴가 보이고 있나요? 아니면 안 보이고 있나요? -> 보이면 true , 안 보이면 false
-		//처음에는 메뉴가 안 보여야 하니까 false
+				var visibility = false;
+		
+				function showMenu() {
+					$("#portfolio").show();
+				}
 
-		function showMenu1() {//메뉴를 보여준다.
-			$("#myInformation").show();
-			//JQUERY에 있는 show함수
-			//아이디가 portfolio인 메뉴를 보여줘~!
-		}
+				function hideMenu() {
+					$("#portfolio").hide();	
+				}
 
-		function hideMenu1() {//메뉴를 감춘다 / 숨긴다.
-			$("#myInformation").hide();
-			//아이디가 portfolio인 메뉴를 숨겨줘~!
-		}
-
-		function checkStatus1() {//메뉴의 상태를 체크해서 -> 전역 변수의 값을 체크한다.
-			if (visibility1 == true) {//true이면 메뉴를 숨기는 함수를 호출하여 실행한다.
-				hideMenu1();
-				visibility1 = false;
-			} else {//false이면 메뉴를 보여주는 함수를 호출하여 실행한다.
-				showMenu1();
-				visibility1 = true;
-			}
-		}
-	</script>
-	<script>
-		//JQUERY script
-		var visibility = false;
-
-		function showMenu() {
-			$("#portfolio").show();
-		}
-
-		function hideMenu() {
-			$("#portfolio").hide();	
-		}
-
-		function checkStatus() {
-			if (visibility == true) {
-				hideMenu();
-				visibility = false;
-			} else {
-				showMenu();
-				visibility = true;
-			}
-		}
-	</script>
-
-	<button onclick="checkStatus()">
-		<img src="./download/triangle.png">
-	</button>
-	<button onclick="checkStatus1()">
-		<img src="./download/triangle1.png">
-	</button>
-
-	<ul id="portfolio">
-		<li>이력</li>
-		<li>장르</li>
-		<li>통계</li>
-		<li>위치</li>
-	</ul>
-	<ul id="myInformation">
-		<li>내정보</li>
-		<li>흔적</li>
-		<li>좋아요</li>
-		<li>쪽지</li>
-	</ul>
+				function checkStatus() {
+					if (visibility == true) {
+						hideMenu();
+						visibility = false;
+					} else {
+						showMenu();
+						visibility = true;
+					}
+				}
+			</script>
 </body>
 </html>
